@@ -3,12 +3,13 @@ package handler
 import (
 	"context"
 	"errors"
-	"github.com/feixiaobo/go-xxl-job-client/v2/logger"
-	"github.com/feixiaobo/go-xxl-job-client/v2/queue"
-	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 	"log"
 	"sync"
 	"sync/atomic"
+
+	"github.com/feixiaobo/go-xxl-job-client/v2/logger"
+	"github.com/feixiaobo/go-xxl-job-client/v2/queue"
+	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 )
 
 type JobHandlerFunc func(ctx context.Context) error

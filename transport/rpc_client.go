@@ -1,9 +1,10 @@
 package transport
 
 import (
-	"github.com/dubbogo/getty"
 	"log"
 	"sync"
+
+	"github.com/dubbogo/getty"
 )
 
 type GettyRPCClient struct {
@@ -38,9 +39,9 @@ func (c *GettyRPCClient) RemoveSession(session getty.Session) {
 	for i, s := range c.sessions {
 		if s == session {
 			c.sessions = append(c.sessions[:i], c.sessions[i+1:]...)
-			log.Print("delete session{%s}, its index{%d}", session.Stat(), i)
+			log.Printf("delete session{%s}, its index{%d}", session.Stat(), i)
 			break
 		}
 	}
-	log.Print("after remove session{%s}, left session number:%d", session.Stat(), len(c.sessions))
+	log.Printf("after remove session{%s}, left session number:%d", session.Stat(), len(c.sessions))
 }

@@ -6,11 +6,12 @@ import (
 	"context"
 	"errors"
 	"fmt"
-	"github.com/feixiaobo/go-xxl-job-client/v2/constants"
 	"io"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/feixiaobo/go-xxl-job-client/v2/constants"
 )
 
 type LogResult struct {

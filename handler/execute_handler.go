@@ -4,10 +4,6 @@ import (
 	"bytes"
 	"context"
 	"fmt"
-	"github.com/feixiaobo/go-xxl-job-client/v2/constants"
-	"github.com/feixiaobo/go-xxl-job-client/v2/logger"
-	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
-	"github.com/pkg/errors"
 	"os"
 	"os/exec"
 	"reflect"
@@ -15,6 +11,12 @@ import (
 	"strings"
 	"sync"
 	"time"
+
+	"github.com/pkg/errors"
+
+	"github.com/feixiaobo/go-xxl-job-client/v2/constants"
+	"github.com/feixiaobo/go-xxl-job-client/v2/logger"
+	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 )
 
 var scriptMap = map[string]string{
@@ -148,7 +150,7 @@ func (s *ScriptHandler) Execute(jobId int32, glueType string, runParam *JobRunPa
 	c := buffer.String()
 
 	runParam.CurrentCancelFunc = canFun
-	cmd := exec.CommandContext(cancelCtx, scriptCmd[glueType], "-c", c)
+	cmd := exec.CommandContext(cancelCtx, scriptCmd[glueType], "-f", c)
 	output, err := cmd.Output()
 	if err != nil {
 		logger.Info(ctx, "run script job res:", string(output), ", error:", err.Error())

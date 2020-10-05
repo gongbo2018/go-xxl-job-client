@@ -2,12 +2,13 @@ package admin
 
 import (
 	"fmt"
-	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 	"log"
 	"net"
 	"net/http"
 	"sync"
 	"time"
+
+	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 )
 
 type XxlAdminServer struct {

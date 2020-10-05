@@ -3,10 +3,11 @@ package admin
 import (
 	"bytes"
 	"encoding/json"
-	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 	"io/ioutil"
 	"net/http"
 	"time"
+
+	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 )
 
 func ApiCallback(address, accessToken string, callbackParam []*transport.HandleCallbackParam, timeout time.Duration) (respMap map[string]interface{}, err error) {

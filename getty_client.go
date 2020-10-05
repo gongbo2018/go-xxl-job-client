@@ -2,14 +2,16 @@ package xxl
 
 import (
 	"fmt"
-	"github.com/dubbogo/getty"
-	"github.com/dubbogo/getty/demo/util"
-	"github.com/dubbogo/gost/sync"
-	"github.com/feixiaobo/go-xxl-job-client/v2/handler"
-	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 	"net"
 	"strconv"
 	"time"
+
+	"github.com/dubbogo/getty"
+	"github.com/dubbogo/getty/demo/util"
+	"github.com/dubbogo/gost/sync"
+
+	"github.com/feixiaobo/go-xxl-job-client/v2/handler"
+	"github.com/feixiaobo/go-xxl-job-client/v2/transport"
 )
 
 const (
